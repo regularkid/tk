@@ -7,6 +7,7 @@ Another micro game engine for JavaScript called Tiknee (pronounced "Tiny".. but 
 + Dirt simple "state management"™!
 + 2 whole functions for drawing things (image / text)!
 + Uses the wonderful ZzFX sfx engine (https://github.com/KilledByAPixel/ZzFX)
++ Less than 100 lines of code!
 
 ## Micro Tutorial
 Todo...
