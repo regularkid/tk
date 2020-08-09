@@ -35,7 +35,7 @@ gameHeight = 150;
 gameScale = 3.0;
 ```
 
-3. Make a new JavaScript file for all of your game specific code (checkout main.js for an example):
+3. Make a new JavaScript file (myGame.js in the example above) for all of your game specific code (checkout main.js for an example):
 
 ```
 // Load assets
