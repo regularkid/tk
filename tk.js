@@ -13,6 +13,7 @@ canvas.style.backgroundColor = "black";
 canvas.style.imageRendering = "pixelated";
 document.getElementById("game").appendChild(canvas);
 ctx = this.canvas.getContext('2d');
+ctx.imageSmoothingEnabled = false;
 
 // Input (mouse/touch only!) --------------------------------------------------
 touch = { x: 0, y: 0, up: false, down: false, hold: false}
@@ -45,7 +46,7 @@ DrawSprite = (image, x, y, xScale = 1.0, yScale = 1.0, angle = 0.0) =>
     ctx.restore();
 }
 
-DrawText = (text, x, y, angle = 0, fontSize = 12, fontName = "Arial", fillStyle = "#FFF", fontStyle = "", align = "left", baseline = "bottom") =>
+DrawText = (text, x, y, fontSize = 12, fillStyle = "#FFF", angle = 0, fontName = "Arial", fontStyle = "", align = "left", baseline = "bottom") =>
 {
     this.ctx.save();
     this.ctx.translate(x, y);
@@ -66,6 +67,8 @@ zzfx=    // play sound
 // Main loop + State management -----------------------------------------------
 state = null;
 nextState = null;
+Enter = 0; Tick = 1; Exit = 2;
+clearColor = "#000";
 GameLoop = () =>
 {
     window.requestAnimationFrame(GameLoop);
@@ -73,14 +76,22 @@ GameLoop = () =>
     // Switch states?
     if (nextState != null)
     {
+        if (state != null) { state(Exit); }
         state = nextState;
+        if (state != null) { state(Enter); }
         nextState = null;
     }
+
+    // Clear canvas
+    //ctx.clearRect(0, 0, gameWidth, gameHeight);
+    ctx.rect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = clearColor;
+    ctx.fill();
 
     // Run state
     if (state)
     {
-        state();
+        state(Tick);
     }
 
     // Clear per-frame input values
