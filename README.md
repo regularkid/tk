@@ -21,7 +21,7 @@ Another JavaScript micro game engine called **Tiknee** (pronounced "Tiny".. but 
     <body>
         <div id="game"></div>
         <script src="tk.js"></script>
-        <script src="myGame.js"></script>
+        <script src="exampleGame.js"></script>
     </body>
 </html>
 ```
@@ -35,7 +35,7 @@ gameHeight = 150;
 gameScale = 3.0;
 ```
 
-3. Make a new JavaScript file (myGame.js in the example above) for all of your game specific code (checkout main.js for an example):
+3. Make a new JavaScript file (exampleGame.js in the example above) for all of your game specific code:
 
 ```
 // Load assets
