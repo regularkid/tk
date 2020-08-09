@@ -78,13 +78,12 @@ GameLoop = () =>
     {
         if (state != null) { state(Exit); }
         state = nextState;
-        if (state != null) { state(Enter); }
         nextState = null;
+        if (state != null) { state(Enter); }
     }
 
     // Clear canvas
-    //ctx.clearRect(0, 0, gameWidth, gameHeight);
-    ctx.rect(0, 0, canvas.width, canvas.height);
+    ctx.rect(0, 0, gameWidth, gameHeight);
     ctx.fillStyle = clearColor;
     ctx.fill();
 
