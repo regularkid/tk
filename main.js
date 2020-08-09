@@ -1,15 +1,17 @@
 // Load assets
 star = LoadSprite("Star.png")
 
-TestState = (reason) =>
+// Example state
+ExampleState = (reason) =>
 {
+    // Example: How to handle state enter/exit logic
     if (reason == Enter)
     {
-        console.log("Entering 'Main Menu' state");
+        console.log("Entering 'Example' state");
     }
     else if (reason == Exit)
     {
-        console.log("Exiting 'Main Menu' state");
+        console.log("Exiting 'Example' state");
     }
 
     // Example: Log touch position while being held
@@ -18,7 +20,7 @@ TestState = (reason) =>
         console.log("Touch Pos: " + touch.x + ", " + touch.y);
     }
 
-    // Example: Change background color depending on where touch is pressed
+    // Example: Change background color depending on where a new touch is pressed
     if (touch.down)
     {
         clearColor = (touch.x < gameWidth*0.5) ? "#888" : "#000";
@@ -36,4 +38,4 @@ TestState = (reason) =>
 }
 
 // Start initial state
-nextState = TestState;
+nextState = ExampleState;
