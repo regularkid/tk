@@ -26,7 +26,7 @@ Another JavaScript micro game engine called **Tiknee** (pronounced "Tiny".. but 
 </html>
 ```
 
-2. Modify tk.js config settings to set the game's width, height, and pixel scale - actual canvas size will be (width*scale) x (height*scale):
+2. Modify tk.js config settings to set the game's width, height, and pixel scale - actual canvas size will be (width * scale) x (height * scale):
 
 ```
 // Config ---------------------------------------------------------------------
